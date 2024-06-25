@@ -24,7 +24,6 @@ let transporter = nodemailer_1.default.createTransport({
 });
 const sendEmails = (...args_1) => __awaiter(void 0, [...args_1], void 0, function* (to = "prerana@yopmail.com", alertId = "1262362") {
     const path = require('path');
-    // const htmlPath = path.join(__dirname, 'alertTemplate.ejs');
     const htmlPath = process.env.ALERT_TEMPLATE_PATH || './src/alertTemplate.ejs';
     // const htmlPath =
     //   "C:\\Users\\PRERANA\\Streetlink-Assistant\\src\\alertTemplate.ejs";
