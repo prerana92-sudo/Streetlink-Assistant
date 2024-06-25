@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
-import ejs from 'ejs';
-import path from 'path';
+import ejs from "ejs";
+import path from "path";
 
 let transporter = nodemailer.createTransport({
   service: "gmail",
@@ -10,18 +10,23 @@ let transporter = nodemailer.createTransport({
   },
 });
 
+export const sendEmails = async (
+  to: string = "prerana@yopmail.com",
+  alertId: string = "1262362"
+) => {
 
-export const sendEmails = async (to: string = 'prerana@yopmail.com', alertId: string = "1262362") => {
-   const htmlPath = "C:\\Streetlink Assistant\\src\\alertTemplate.ejs";
-   const htmlTemplateContent = await ejs.renderFile( htmlPath, {alertId});
-  
+  const path = require('path');
+const htmlPath = process.env.ALERT_TEMPLATE_PATH || './src/alertTemplate.ejs';
+  // const htmlPath =
+  //   "C:\\Users\\PRERANA\\Streetlink-Assistant\\src\\alertTemplate.ejs";
+  const htmlTemplateContent = await ejs.renderFile(htmlPath, { alertId });
 
- const info = await transporter.sendMail({
+  const info = await transporter.sendMail({
     from: "prerana1916@gmail.com",
     to: to,
     subject: "Alert Creation Email",
-    html: htmlTemplateContent
-   });
+    html: htmlTemplateContent,
+  });
 
-    console.log("Email sent: %s", info.messageId);
+  console.log("Email sent: %s", info.messageId);
 };

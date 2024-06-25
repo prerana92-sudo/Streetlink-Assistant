@@ -22,14 +22,18 @@ let transporter = nodemailer_1.default.createTransport({
         pass: "nwgx tjbz ieae waui",
     },
 });
-const sendEmails = (...args_1) => __awaiter(void 0, [...args_1], void 0, function* (to = 'prerana@yopmail.com', alertId = "1262362") {
-    const htmlPath = "C:\\Streetlink Assistant\\src\\alertTemplate.ejs";
+const sendEmails = (...args_1) => __awaiter(void 0, [...args_1], void 0, function* (to = "prerana@yopmail.com", alertId = "1262362") {
+    const path = require('path');
+    // const htmlPath = path.join(__dirname, 'alertTemplate.ejs');
+    const htmlPath = process.env.ALERT_TEMPLATE_PATH || './src/alertTemplate.ejs';
+    // const htmlPath =
+    //   "C:\\Users\\PRERANA\\Streetlink-Assistant\\src\\alertTemplate.ejs";
     const htmlTemplateContent = yield ejs_1.default.renderFile(htmlPath, { alertId });
     const info = yield transporter.sendMail({
         from: "prerana1916@gmail.com",
         to: to,
         subject: "Alert Creation Email",
-        html: htmlTemplateContent
+        html: htmlTemplateContent,
     });
     console.log("Email sent: %s", info.messageId);
 });
