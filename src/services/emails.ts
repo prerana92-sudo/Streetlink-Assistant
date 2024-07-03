@@ -1,6 +1,5 @@
 import nodemailer from "nodemailer";
 import ejs from "ejs";
-import path from "path";
 
 let transporter = nodemailer.createTransport({
   service: "gmail",
@@ -26,7 +25,7 @@ const htmlPath = process.env.ALERT_TEMPLATE_PATH || './src/alertTemplate.ejs';
     to: to,
     subject: "Alert Creation Email",
     html: htmlTemplateContent,
-  });
+  }); 
 
   console.log("Email sent: %s", info.messageId);
 };
