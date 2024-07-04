@@ -1,34 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Streetlink Chatbot</title>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #f2f2f2;
-      font-family: Arial, sans-serif;
-    }
-    flowise-fullchatbot {
-      width: 100vw;  /* Full viewport width */
-      height: 100vh; /* Full viewport height */
-    }
-  </style>
-</head>
-<body>
-  <flowise-fullchatbot></flowise-fullchatbot>
-  <script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/gh/Digiinteracts/FlowiseChatEmbed/dist/web.js";
-    Chatbot.initFull({
-      chatflowid: "9a7ed049-1f8e-43ac-9e84-96e736a811e1",
-      apiHost: "https://mmade-flowisemasterymade.hf.space",
-    });
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Streetlink Chatbot</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .chat-container {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        width: 90%;
+        max-width: 600px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat-container">
+      <h1>Welcome</h1>
+      <p>
+        Use the chatbot below to report or get help for someone sleeping rough.
+      </p>
+    </div>
+
+    <!-- Flowise Chatbot Script -->
+    <!-- <script type="module">
+        import Chatbot from "https://cdn.jsdelivr.net/gh/Digiinteracts/FlowiseChatEmbed/dist/web.js"
+        Chatbot.init({
+            chatflowid: "3b688c6b-fe1c-466a-a76e-2f58e37575bc",
+            apiHost: "http://localhost:3000",
+        })
+    </script> -->
+
+    <script type="module">
+      import Chatbot from "https://cdn.jsdelivr.net/gh/Digiinteracts/FlowiseChatEmbed/dist/web.js";
+      Chatbot.init({
+        chatflowid: "9a7ed049-1f8e-43ac-9e84-96e736a811e1",
+        apiHost: "https://mmade-flowisemasterymade.hf.space",
+      });
+    </script>
+
+</script>
+  </body>
 </html>
