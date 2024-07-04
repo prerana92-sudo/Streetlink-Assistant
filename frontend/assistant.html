@@ -28,28 +28,20 @@
   </head>
   <body>
     <div class="chat-container">
-      <h1>Welcome to Streetlink</h1>
+      <h1>Welcome</h1>
       <p>
         Use the chatbot below to report or get help for someone sleeping rough.
       </p>
     </div>
 
-    <!-- Flowise Chatbot Script -->
-    <!-- <script type="module">
-        import Chatbot from "https://cdn.jsdelivr.net/gh/Digiinteracts/FlowiseChatEmbed/dist/web.js"
-        Chatbot.init({
-            chatflowid: "3b688c6b-fe1c-466a-a76e-2f58e37575bc",
-            apiHost: "http://localhost:3000",
-        })
-    </script> -->
-
-    <script type="module">
-      import Chatbot from "https://cdn.jsdelivr.net/gh/Digiinteracts/FlowiseChatEmbed/dist/web.js";
-      Chatbot.init({
+<flowise-fullchatbot></flowise-fullchatbot>
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/gh/Digiinteracts/FlowiseChatEmbed/dist/web.js"
+    Chatbot.initFull({
         chatflowid: "9a7ed049-1f8e-43ac-9e84-96e736a811e1",
         apiHost: "https://mmade-flowisemasterymade.hf.space",
-      });
-    </script>
+    })
+</script>
 
 </script>
   </body>
